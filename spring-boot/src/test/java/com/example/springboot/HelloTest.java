@@ -4,8 +4,9 @@ import static org.junit.jupiter.api.Assertions.*;
 import static org.junit.jupiter.api.Assumptions.assumeTrue;
 
 import org.junit.jupiter.api.DisplayName;
-// import org.junit.jupiter.api.MethodOrderer;
+import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
+// import org.junit.jupiter.api.MethodOrderer;
 // import org.junit.jupiter.api.TestMethodOrder;
 
 // @TestMethodOrder(MethodOrderer.OrderAnnotation.class);
@@ -20,7 +21,8 @@ public class HelloTest {
     assertEquals("hello", hello.sayHello());
   }
 
-  // Assumption example. To determine to run test or not: Assumption true -> run test
+  // Assumption example. To determine to run test or not: Assumption true -> run
+  // test
   @Test
   // @Order(2)
   @DisplayName("say hello string matches if hello is not null.")
@@ -29,5 +31,16 @@ public class HelloTest {
     assumeTrue(hello != null);
     assertEquals("hello", hello.sayHello());
   }
-  
+
+  // Nested tests
+  @Nested
+  class NestedTestExample {
+    @Test
+    @DisplayName("say hello string matches in nested tests.")
+    public void testSayHelloNested() {
+      Hello hello = new Hello();
+      assertEquals("hello", hello.sayHello());
+    }
+  }
+
 }
