@@ -5,6 +5,7 @@ import static org.junit.jupiter.api.Assumptions.assumeTrue;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Nested;
+import org.junit.jupiter.api.RepeatedTest;
 import org.junit.jupiter.api.Test;
 // import org.junit.jupiter.api.MethodOrderer;
 // import org.junit.jupiter.api.TestMethodOrder;
@@ -43,4 +44,13 @@ public class HelloTest {
     }
   }
 
+  // Repeated test
+  @Test
+  @RepeatedTest(10)
+  @DisplayName("say hello string matches x 10 times.")
+  public void testSayHelloRepeatTen() {
+    Hello hello = new Hello();
+    assumeTrue(hello != null);
+    assertEquals("hello", hello.sayHello());
+  }
 }
