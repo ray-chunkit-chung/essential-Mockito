@@ -13,10 +13,10 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 // import static org.mockito.BDDMockito.*;
 
 @ExtendWith(MockitoExtension.class)
-public class StockTest {
+public class StockMockitoTest {
 
   @Mock
-  Stock stock;
+  StockMockito stock;
 
   @BeforeEach
   public void setupMocks() {

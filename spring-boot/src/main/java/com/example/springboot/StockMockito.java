@@ -2,12 +2,12 @@ package com.example.springboot;
 
 // Modify from https://www.tutorialspoint.com/mockito/mockito_first_application.htm
 
-public class Stock {
+public class StockMockito {
   private String stockId;
   private String name;
   private int quantity;
 
-  public Stock(String stockId, String name, int quantity) {
+  public StockMockito(String stockId, String name, int quantity) {
     this.stockId = stockId;
     this.name = name;
     this.quantity = quantity;
